@@ -15,7 +15,8 @@ def menu():
                 case '2':
                     tcp_server()
                 case '3':
-                    replacing_netcat()
+                    args = input('Enter args for netcat')
+                    replacing_netcat(args)
                 case '0':
                     quit()
         else:
@@ -83,8 +84,8 @@ def tcp_server():
         # client_handler.start()
         handle_client(client)
         
-def replacing_netcat():
-        os.system("python")
+def replacing_netcat(args):
+        os.system(f'python ./Netcat.py {args}')
 
 
         
