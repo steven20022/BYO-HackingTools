@@ -6,7 +6,7 @@ import socket
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind and listen
-serverSocket.bind(("127.0.0.1",9090))
+serverSocket.bind(("127.0.0.1",80))
 serverSocket.listen()
 
 # Accept connections

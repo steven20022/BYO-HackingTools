@@ -25,12 +25,12 @@ def menu():
 
 def tcp_client():
     try:
-        target_host = "127.0.0.1" #"my.chc.edu" #socket.gethostbyname(input("Please enter target_host: "))
+        target_host = socket.gethostbyname(input("Please enter target_host: "))#"127.0.0.1" #"my.chc.edu" 
     except socket.gaierror:
         print("Error resolving host")
         menu()
         exit()
-    target_port = 9090 #int(input("Please enter target_port: "))
+    target_port = int(input("Please enter target_port: ")) #9090
 
     # create a socket object
     try:
@@ -51,7 +51,7 @@ def tcp_client():
         exit()
     
     # send some data
-    client.send("Hello Server!".encode()) #client.send(input("Enter data to sent: ").encode())
+    client.send(input("Enter data to sent: ").encode()) #client.send("Hello Server!".encode())
     print("Data Sent")
 
     # receive some data
